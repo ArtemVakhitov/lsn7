@@ -8,8 +8,9 @@ services:
       - webapps:/usr/local/tomcat/webapps
 
   build:
-    depends_on: prod  # Presumably Docker prepopulates volumes with the existing contents
-                      # as stated here: https://docs.docker.com/engine/storage/volumes/#populate-a-volume-using-a-container
+    depends_on:
+      - prod  # Presumably Docker prepopulates volumes with the existing contents
+              # as stated here: https://docs.docker.com/engine/storage/volumes/#populate-a-volume-using-a-container
     context: .
     dockerfile: build.Dockerfile
     volumes:
