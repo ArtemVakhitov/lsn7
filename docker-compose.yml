@@ -12,8 +12,9 @@ services:
     depends_on:
       - prod  # Presumably Docker prepopulates volumes with the existing contents
               # as stated here: https://docs.docker.com/engine/storage/volumes/#populate-a-volume-using-a-container
-    context: .
-    dockerfile: build.Dockerfile
+    build:
+      context: .
+      dockerfile: build.Dockerfile
     volumes:
       - webapps:/tmp/hello
 
