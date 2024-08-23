@@ -3,7 +3,8 @@ services:
   prod:
     image: tomcat:8-alpine
     restart: on-failure:3
-    ports: '8080:8080'
+    ports:
+      - '8080:8080'
     volumes:
       - webapps:/usr/local/tomcat/webapps
 
